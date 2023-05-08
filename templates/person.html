@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}
+Personal Details
+{% endblock%}
+{% block content %}
+<h2 class='text-center'>Personal Details</h2>
+<hr>
+<div class="container text-center">
+    {% for d in person %}
+    <div class="card text-center mx-3 my-3 bg-light " style="width: 18rem;display: inline-block;">
+        <img class="card-img-top" src="{{d.profile_pic.url }}" alt="Error">
+        
+        <div class="card-body">
+          <h4 class="card-title">{{d.name}}</h4>
+          <hr>
+          <h6 class="card-text">Place : {{d.place}}</h6>
+          <hr>
+          <h6 class="card-text">Job : {{d.job}}</h6>
+          <!-- <a href="descriptions.url" class="btn btn-primary">Descriptions</a> -->
+          
+        </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock%}
